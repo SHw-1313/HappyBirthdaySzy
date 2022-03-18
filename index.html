@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+ 
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background-color: #3F51B5;
+			}
+			.aside-left {
+				position: absolute;
+				left: 0;
+				padding: 10px;
+			}
+			
+			ol {
+				margin-left: 20px;
+			}
+			
+			ol li {
+				padding: 10px 10px;
+				font: italic 12pt "myfont";
+			}
+			
+			h2 {
+				text-align: center;
+			}
+			
+			.aside-right {
+				float: right;
+				margin-right: 30px;
+			}
+			
+			.container {
+				position: absolute;
+				left: 50%;
+				margin-left: -512px;
+				width: 1024px;
+				height: 614px;
+				background: url(img/bg.jpg) no-repeat;
+			}
+			
+			.title {
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 2em;
+				text-align: center;
+			}
+			
+			@font-face {
+				font-family: "myfont";
+				src: url('font/FZLTXHJW.TTF');
+			}
+						
+			footer {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				text-align: center;
+				font: italic 12pt "myfont";
+			}
+			.imgbox {
+				position: absolute;
+				margin:0 auto;
+				top: 20%;
+				width: 600px;
+				height: auto;
+			}
+
+			#show-box {
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 50%;
+				font: bold 3em "myfont";
+				text-align: center;
+			}
+			/*自定义动画*/
+			.btn{
+				height:50px;
+				width:100px;
+			}
+		</style>
+	</head>
+ 
+	<body>
+
+		<div class="aside-left">
+			点击按钮抽取！
+		</div>
+		<div class="container">
+			<div class="title">
+						<button class="btn" type="button" onclick="begin()">点我抽一张！</button>
+			</div>
+			<div class="imgbox">
+				<img id="picture" src = "" alt="failed" style="width: 600px;"/> 
+			</div>
+            
+		</div>
+		<footer>
+			Made by YuanSH
+		</footer>
+		<script>
+			//数据
+            var lucker;
+			var names = ['0.jpeg',
+'02DCAAA7A05D501B5FCE0327317B9370.jpg',
+'034E68D0F0EE93C0337318314EBAD989.jpg',
+'05BE9D1F552F939C51DCEA1AFE461422.png',
+'1.jpeg',
+'1044E41225565EEEF2D36CC3D3DDC345.jpg',
+'14339852B7A4FCE890CEB348A6958C29.jpg',
+'1647616575720.gif',
+'2.jpeg',
+'2A67DD5A877F2A50EF7A7C89051DF315.jpg',
+'2CB5A090C359551D3CD5590163D846AA.jpg',
+'3.jpeg',
+'336FC0943D142595951312482E95E717.jpg',
+'3B4FB36A392D43E1A5E1ADE5AB6A06CF.gif',
+'454FA09E6B657C340D811CAFE23D3E1C.jpg',
+'5.jpeg',
+'500B9695D5CFB7E1D9478CC30DFDEF3D.jpg',
+'61C6952D-6FCA-400D-80E4-BBABB7DF82A6.png',
+'674CE3377DA068247879678262529393.jpg',
+'6C491AE3127239CF592AA8A885592984.jpg',
+'714448260CBB534EB5C677FCC10EC221.jpg',
+'7C7F7119E5504E6432B0765671B39E0B.jpg',
+'7CFE0EE3FEFEB1F5A6634CE8F29785FA.jpg',
+'8092425128647BFA9A0B433FE88EACC2.jpg',
+'8D00D3F08AF31BC346F3434A91688771.jpg',
+'8F0DEA8BEEB302BE7B0E235EC19AAA46.jpg',
+'9432B0B623731E3F474DF9E6878E25B5.jpg',
+'993E70EDC780A7B3409193D9B4D7B586.jpg',
+'9D235386E318D973CB64AC889A2AA7C3.jpg',
+'A972B345DDD8AE8FFD67EFF6620480BA.jpg',
+'BB8D406FD98710006B6090AF1E84A1B3.jpg',
+'BE87CC0CB935B98365125A34AECA6607.jpg',
+'C0FA033435099A15595C320AC5646999.jpg',
+'C5A56EEF20B8396FAB422ED2A84354FA.jpg',
+'C874ABC93AC359164875EB70CAB33E96.jpg',
+'CC053F37863414FE395995AD9A0E100F.jpg',
+'CED1912475DBFC5405DA50F2A4E6214A.jpg',
+'D47058CED3DF22DED33609BD65F5A2E7.jpg',
+'E5E69C123AE4CF873D033D4307B53A77.jpg',
+'EFB0556CB16F8C9C216B549D5C3DCAC2.jpg',
+'F051B017DE96BF7650233E5194A3B32B.jpg',
+'F28ED5D3A03E1047F5547B6F39E81AC8.gif',
+'FC9D797DAE2AFD5F70756FE0FFFE5F09.jpg'
+ 
+			];
+			
+ 
+			//开始抽取，随机获取下标
+			function begin() {
+				var index = Math.floor(Math.random() * names.length);
+				lucker = './zhenghuo/' + names[index];
+
+                document.getElementById("picture").src = lucker;
+
+				;
+			//$('show-box').innerHTML = lucker;
+			}
+ 
+			function $(id) {
+				return document.getElementById(id);
+			}
+		</script>
+	</body>
+ 
+</html>
+
+
